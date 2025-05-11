@@ -22,14 +22,35 @@
             function showItemList() {
                 console.log("商品は以下の" + items.length + "種類です。");
 
-                // 配列の内容を項目毎に出力
+               for (let x in items) {
+                console.log("商品番号:"+items[x].id+", 商品名:"+items[x].name+",金額:"+items[x].price+",在庫数:"+items[x].stock);
+               } // 配列の内容を項目毎に出力
                 // ここにコードを書く
                 console.log(""); // 空行の出力
             }
 
             // 商品購入の関数
             function buyItem(no) {
-                // ここにコードを書く
+                let x = 0;
+                for (let i = 0; i < items.length; i++) {
+                    if (items[i].id == no) {
+                    x = items[i];
+                    break; 
+                    }
+
+                }
+                if (no<9 && no>0) {
+                    console.log("商品番号:"+ no +",商品名"+x.name+"を購入します")
+                    if (x.stock > 0){
+                        x.stock --
+                    }
+                    else{
+                        console.log("在庫がありません")
+                    }
+                }
+                else{
+                    console.log(no + "は無効な商品名です番号は１～８で入力してください")
+                 }
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
