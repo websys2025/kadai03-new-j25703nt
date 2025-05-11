@@ -32,11 +32,12 @@
             // 商品購入の関数
             function buyItem(no) {
                 let x = 0;
-                for (let i = 0; i < items.lenght; i++) {
-                        if(items[i].id == no) {
-                        x = items[i];
-                    break;
-                    }// ここにコードを書く
+                for (let i = 0; i < items.length; i++) {
+                    if (items[i].id == no) {
+                    x = items[i];
+                    break; 
+                    }
+
                 }
                 if (no<9 && no>0) {
                     console.log("商品番号:"+ no +",商品名"+x.name+"を購入します")
